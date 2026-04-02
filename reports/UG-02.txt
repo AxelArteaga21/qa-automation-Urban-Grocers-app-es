@@ -1,0 +1,31 @@
+[API] kit name accepts empty value when it should be rejected with 400 status
+
+**Environment:**
+- Endpoint: POST /api/v1/kits
+- Method: POST
+- Content-Type: application/json
+
+**Steps to Reproduce:**
+1. Send POST request to /api/v1/kits
+2. Use body:
+  {
+      "name": ""
+  }
+3. Observe the response status code
+
+    **Expected Result:**
+   - Status code: 400 Bad Request
+   - Validation error indicating that the "name" field cannot be empty
+
+   **Actual Result:**
+     - Status code: 201 Created
+     - Kit is successfully created with an empty name
+
+   **Impact:**
+     - Invalid data is accepted by the system
+     - Breaks validation rules for required fields
+     - May cause inconsistencies in data and downstream processes
+
+⚠️**Note**
+- The "name" field should be required and contain valid characters
+- This issue was identified during negative and boundary testing

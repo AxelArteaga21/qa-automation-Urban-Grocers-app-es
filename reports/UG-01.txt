@@ -1,0 +1,33 @@
+[API] firstName allows spaces when it should be rejected with 400 status
+
+**Environment:**
+- Endpoint: POST /api/v1/users
+- Method: POST
+- Content-Type: application/json
+
+**Steps to Reproduce:**
+1. Send POST request to /api/v1/users
+2. Use body:
+   {
+     "firstName": "A Aaa",
+     "phone": "+1234567890",
+     "address": "123 Elm Street, Hilltop"
+   }
+3. Observe the response
+
+   **Expected Result:**
+   - Status code: 400 Bad Request
+   - Validation error indicating invalid format (spaces not allowed)
+
+    **Actual Result:**
+   - Status code: 201 Created
+   - User is successfully created
+
+    **Impact:**
+   - Invalid data is accepted by the system
+   - Breaks validation rules for user input
+   - May cause inconsistencies in downstream systems
+
+> ⚠️**Note**
+> - According to validation rules, `firstName` should only contain Latin letters (no spaces)
+> - This issue was identified during boundary and negative testing

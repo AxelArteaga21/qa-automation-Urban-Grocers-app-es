@@ -1,0 +1,29 @@
+[API] Create kit while skip the name parameter when it should be rejected with a 400 status
+
+**Environment:**
+- Endpoint: POST /api/v1/kits
+- Method: POST
+- Content-Type: application/json
+
+**Steps to Reproduce:**
+1. Send POST request to /api/v1/kits
+2. Use body:
+   { }
+3. Observe the response status code
+
+    **Expected Result:**
+    - Status code: 400 Bad Request
+    - Validation error indicating missing required field(s), such as "name"
+
+    **Actual Result:**
+    - Status code: 500 Internal Server Error
+    - Server fails instead of handling validation properly
+
+    **Impact:**
+    - Critical: Invalid input causes server error
+    - Indicates lack of proper validation handling
+    - May affect system stability and reliability
+
+⚠️**Notes**
+- Missing required fields should be handled as client errors (4xx), not server errors (5xx)
+- This issue was identified during negative testing

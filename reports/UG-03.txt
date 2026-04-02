@@ -1,0 +1,31 @@
+[API] kit name exceeds maximum length when it should be rejected with 400 status
+
+**Environment:**
+- Endpoint: POST /api/v1/kits
+- Method: POST
+- Content-Type: application/json
+
+**Steps to Reproduce:**
+1. Send POST request to /api/v1/kits
+2. Use body:
+   {
+     "name": "<string with 512 characters>"
+   }
+3. Observe the response status code
+
+    **Expected Result:**
+    - Status code: 400 Bad Request
+    - Validation error indicating that the maximum length (511) was exceeded
+
+    **Actual Result:**
+    - Status code: 201 Created
+    - Kit is successfully created despite exceeding the allowed length
+
+    **Impact:**
+    - Validation rules are not enforced correctly
+    - Allows invalid data into the system
+    - May lead to data inconsistencies and unexpected behavior
+
+⚠️**Note**
+- Maximum allowed length for "name" is 511 characters
+- This issue was identified using boundary value analysis
