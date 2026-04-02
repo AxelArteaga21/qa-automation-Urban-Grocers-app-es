@@ -242,11 +242,11 @@ pytest .\tests\test_create_kit_by_user.py -v
 [Back](#-table-of-contents)
 
 ### 🐞 Report Bugs
-####  [API firstName allows spaces when it should be rejected with 400 status]()
-#### [API kit name accepts empty value when it should be rejected with 400 status]()
-#### [API kit name exceeds maximum length when it should be rejected with 400 status]()
-#### [API Create kit while skip the name parameter when it should be rejected with a 400 status]()
-#### [API kit name accepts numeric value but returns 201 instead of 400 Bad Request]() 
+#### [API firstName allows spaces when it should be rejected with 400 status](https://github.com/AxelArteaga21/qa-automation-Urban-Grocers-app-es/blob/main/reports/UG-01.txt)
+#### [API kit name accepts empty value when it should be rejected with 400 status](https://github.com/AxelArteaga21/qa-automation-Urban-Grocers-app-es/blob/main/reports/UG-02.txt)
+#### [API kit name exceeds maximum length when it should be rejected with 400 status](https://github.com/AxelArteaga21/qa-automation-Urban-Grocers-app-es/blob/main/reports/UG-03.txt)
+#### [API Create kit while skip the name parameter when it should be rejected with a 400 status](https://github.com/AxelArteaga21/qa-automation-Urban-Grocers-app-es/blob/main/reports/UG-04.txt)
+#### [API kit name accepts numeric value but returns 201 instead of 400 Bad Request](https://github.com/AxelArteaga21/qa-automation-Urban-Grocers-app-es/blob/main/reports/UG-05.txt) 
 
 [Back](#-table-of-contents)
 
